@@ -19,6 +19,9 @@ function CustomNavbar() {
             <Nav.Link href='#home'>Home</Nav.Link>
             <Nav.Link href='#features'>Catalogo</Nav.Link>
             <Nav.Link href='#pricing'>Contactanos</Nav.Link>
+            <Nav.Link href='#cart'>
+              <i class='fas fa-shopping-cart'></i>
+            </Nav.Link>
           </Nav>
         </Container>
       </Navbar>

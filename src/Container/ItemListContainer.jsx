@@ -7,26 +7,21 @@ import Button from "react-bootstrap/Button";
 function ItemListContainer() {
   return (
     <Container className='container d-flex'>
-      <CardItem />
-      <CardItem />
-      <CardItem />
-      <CardItem />
+      <Greeting saludo={"Hola Coders!!! "}> </Greeting>
     </Container>
   );
 }
 
 //? Cards de Bootstrap
-function CardItem() {
+function Greeting({ saludo }) {
   return (
-    <Card className='p-5' style={{ width: "18rem" }}>
-      <Card.Img variant='top' src='https://picsum.photos/288/288' /> {""}
-      <Card.Body>
-        <Card.Title>Producto</Card.Title>
-        <Card.Text>Descripcion del producto</Card.Text>
-
-        <Button variant='primary'>Comprar</Button>
-      </Card.Body>
-    </Card>
+    <div>
+      {" "}
+      <h1>
+        {saludo}
+        <i class='far fa-grin-beam'></i>{" "}
+      </h1>
+    </div>
   );
 }
 
