@@ -21,10 +21,10 @@ function CardItem() {
     <Card className='p-5' style={{ width: "18rem" }}>
       <Card.Img variant='top' src='https://picsum.photos/288/288' /> {""}
       <Card.Body>
-        <Card.Title>Card</Card.Title>
-        <Card.Text>Texto del Card</Card.Text>
+        <Card.Title>Producto</Card.Title>
+        <Card.Text>Descripcion del producto</Card.Text>
 
-        <Button variant='primary'>Item</Button>
+        <Button variant='primary'>Comprar</Button>
       </Card.Body>
     </Card>
   );
