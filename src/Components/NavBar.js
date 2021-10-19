@@ -2,8 +2,9 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Image from "react-bootstrap/Image";
+
 import logo from "../assets/img/logo2.svg";
+import CartWidget from "./CartWidget";
 
 let logoSize = "30px";
 
@@ -19,9 +20,7 @@ function CustomNavbar() {
             <Nav.Link href='#home'>Home</Nav.Link>
             <Nav.Link href='#features'>Catalogo</Nav.Link>
             <Nav.Link href='#pricing'>Contactanos</Nav.Link>
-            <Nav.Link href='#cart'>
-              <i class='fas fa-shopping-cart'></i>
-            </Nav.Link>
+            <CartWidget />
           </Nav>
         </Container>
       </Navbar>
