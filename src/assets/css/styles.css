@@ -1,0 +1,26 @@
+.itemDetailContainer {
+  display: flex;
+  background-color: rgba(231, 243, 236, 0.815);
+  border-radius: 4px;
+  border-width: 10px blue;
+  color: white;
+}
+.itemDetailContainer .imagenPrincipal {
+  width: 49vw;
+}
+.itemDetailContainer .idc__descripcion {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.itemDetailContainer .idc__opciones img {
+  width: 50%;
+  height: 80px;
+}
+.itemDetailContainer .idc h6 {
+  color: black;
+  text-align: start;
+}
+
+/*# sourceMappingURL=styles.css.map */
