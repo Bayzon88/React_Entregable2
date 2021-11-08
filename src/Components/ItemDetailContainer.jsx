@@ -80,7 +80,7 @@ const ITEMS = [
   },
 ];
 
-function ItemDetailContainer() {
+function ItemDetailContainer(idProducto) {
   const [productos, setProductos] = useState(() => []);
   //CREANDO PROMISE CON TIME OUT
   const TAREA = new Promise((resolve, reject) => {

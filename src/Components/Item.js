@@ -6,36 +6,41 @@ import { Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ItemDetail from "./ItemDetail";
 import { render } from "sass";
+import { NavLink, Link } from "react-router-dom";
 
 //deconstruccion del prop de react
-function Item({ nombre, descripcion, sku, precio, categoria }) {
+function Item({ nombre, descripcion, sku, precio, categoria, imagen, id }) {
   const item = [nombre, descripcion, sku, precio, categoria];
-  let isDetail = false;
+  const getItemId = (item) => {
+    let idItem = item.target.parentElement.parentElement.parentElement.id;
+  };
 
-  const itemDetail = () => {
-    return (
-      //card de bootstrap incorporando variables
-      <Card style={{ width: "15rem" }}>
-        <Card.Img variant='top' src='https://picsum.photos/400' />
-        <Card.Body>
-          <Card.Title>{nombre}</Card.Title>
-          <Card.Text>{descripcion}</Card.Text>
-          <Card.Text>{sku}</Card.Text>
-          <Card.Text>{precio}</Card.Text>
+  return (
+    //card de bootstrap incorporando variables
+    <Card id={`${id}`} style={{ width: "15rem" }}>
+      <Card.Img variant='top' src={`${imagen}`} />
+      <Card.Body>
+        <Card.Title>{nombre}</Card.Title>
+        <Card.Text>{descripcion}</Card.Text>
+        <Card.Text>{sku}</Card.Text>
+        <Card.Text>{precio}</Card.Text>
 
-          <Button
-            variant='dark'
-            onClick={() => {
-              isDetail = true;
-              itemDetail();
-            }}
+        <Button
+          variant='dark'
+          onClick={(item) => {
+            getItemId(item);
+          }}
+        >
+          <NavLink
+            to={`/category/${categoria}/${id}`}
+            className=' btn btn-dark  '
           >
             Comprar
-          </Button>
-        </Card.Body>
-      </Card>
-    );
-  };
+          </NavLink>
+        </Button>
+      </Card.Body>
+    </Card>
+  );
 }
 
 export default Item;

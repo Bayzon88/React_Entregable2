@@ -1,8 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 
-function ItemDetail(item) {
-  console.log(item);
+function ItemDetail(item, { idItem }) {
+  console.log(idItem);
   return (
     <div className='container  '>
       <div className='itemDetailContainer'>
