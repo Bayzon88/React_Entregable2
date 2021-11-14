@@ -31,10 +31,7 @@ function Item({ nombre, descripcion, sku, precio, categoria, imagen, id }) {
             getItemId(item);
           }}
         >
-          <NavLink
-            to={`/category/${categoria}/${id}`}
-            className=' btn btn-dark  '
-          >
+          <NavLink to={`/${categoria}/${id}`} className=' btn btn-dark  '>
             Comprar
           </NavLink>
         </Button>

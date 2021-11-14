@@ -1,27 +1,27 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
+import { useParams } from "react-router-dom";
 
-function ItemDetail(item, { idItem }) {
-  console.log(idItem);
+function ItemDetail(productos) {
   return (
     <div className='container  '>
       <div className='itemDetailContainer'>
-        <img className='imagenPrincipal' src={`${item.imagen}`} />
+        <img className='imagenPrincipal' src={`${productos.imagen}`} />
         <div className='idc'>
           <div className='idc__descripcion'>
-            <h6>{item.sku}</h6>
-            <h3>Categoria: {item.categoria}</h3>
+            <h6>{productos.sku}</h6>
+            <h3>Categoria: {productos.categoria}</h3>
 
-            <h1>{item.nombre}</h1>
-            <p>{item.descripcion}</p>
+            <h1>{productos.nombre}</h1>
+            <p>{productos.descripcion}</p>
           </div>
           <div className='idc__opciones'>
             <p>Otras opciones: </p>
-            <img src={`${item.imagenOpcion1}`} alt='' />
-            <img src={`${item.imagenOpcion2}`} alt='' />
+            <img src={`${productos.imagenOpcion1}`} alt='' />
+            <img src={`${productos.imagenOpcion2}`} alt='' />
 
             <div className='d-flex p-3'>
-              <p>S/. {item.precio}</p>
+              <p>S/. {productos.precio}</p>
               <Button className=''>Comprar</Button>
             </div>
           </div>

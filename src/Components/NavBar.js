@@ -11,6 +11,23 @@ import { NavItem } from "react-bootstrap";
 let logoSize = "30px";
 
 function CustomNavbar() {
+  const categories = [
+    {
+      id: "cat1",
+      address: "futbol",
+      text: "Futbol",
+    },
+    {
+      id: "cat2",
+      address: "tenis",
+      text: "Tennis",
+    },
+    {
+      id: "cat3",
+      address: "running",
+      text: "Running",
+    },
+  ];
   return (
     <div>
       <Navbar collapseOnSelect expand='md' bg='dark' variant='dark'>
@@ -21,33 +38,24 @@ function CustomNavbar() {
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
             <Nav className='me-auto '>
-              <Nav.Link as={Link} to='/' className='nav-link'>
+              <Nav.Link as={Link} exact to='/' className='nav-link'>
                 Home
               </Nav.Link>
 
               <NavDropdown title='Categorias' id='collasible-nav-dropdown'>
-                <NavDropdown.Item as={Link} to='/futbol'>
-                  Futbol
+                <NavDropdown.Item as={NavLink} to={`${categories[0].address}`}>
+                  {`${categories[0].text}`}
                 </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to='/tennis'>
-                  Tennis
+                <NavDropdown.Item as={NavLink} to={`${categories[1].address}`}>
+                  {`${categories[1].text}`}
                 </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to='/running'>
-                  Running
+                <NavDropdown.Item as={NavLink} to={`${categories[2].address}`}>
+                  {`${categories[2].text}`}
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
-            {/* <Nav>
-              <Nav.Link href='#deets'>More deets</Nav.Link>
-              <Nav.Link eventKey={2} href='#memes'>
-              Dank memes
-              </Nav.Link>
-            </Nav> */}
           </Navbar.Collapse>
-          <div className='shoppingCart'>
-            {" "}
-            <i class='fas fa-shopping-cart'></i>
-          </div>
+          <CartWidget />
         </Container>
       </Navbar>
     </div>

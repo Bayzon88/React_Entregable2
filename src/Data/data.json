@@ -1,0 +1,95 @@
+[
+  {
+    "id": 1,
+    "nombre": "Camista Bayern",
+    "descripcion": "Camiseta Bayern FC para niño",
+    "sku": "1234567890",
+    "precio": 190,
+    "categoria": "futbol",
+    "imagen": "https://img.fcbayern.com/image/upload/q_auto,f_auto/w_800,h_1067,c_pad/eCommerce/produkte/24525/fc-bayern-kindertrikot-home-19-20.png",
+    "opciones": [
+      "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/06a39a6641e8498a8897a820004945c4_9366/Camiseta_de_Futbol_de_Local_FC_Bayern_Munich_Replica_Rojo_AZ7961_01_laydown.jpg",
+      "https://img.planetafobal.com/2021/07/camiseta-titular-adidas-2021-2022-bayern-munich-wq.jpg"
+    ]
+  },
+
+  {
+    "id": 2,
+    "nombre": "Raqueta Tenis",
+    "descripcion": "Babolat Raqueta Tenis Boost Drive",
+    "sku": "1234567899",
+    "precio": 290,
+    "categoria": "tenis",
+    "imagen": "https://www.smashinn.com/f/13776/137762387/babolat-raqueta-tenis-boost-drive.jpg",
+    "imagenOpcion1": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/06a39a6641e8498a8897a820004945c4_9366/Camiseta_de_Futbol_de_Local_FC_Bayern_Munich_Replica_Rojo_AZ7961_01_laydown.jpg",
+    "imagenOpcion2": "https://img.planetafobal.com/2021/07/camiseta-titular-adidas-2021-2022-bayern-munich-wq.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Wilson Overgrip",
+    "descripcion": "Wilson Advantage Overgrip",
+    "sku": "1234567898",
+    "precio": 48.9,
+    "categoria": "tenis",
+    "imagen": "https://i.linio.com/p/d0477d570160c4c4619dd017e0226f33-product.webp",
+    "imagenOpcion1": "https://i.linio.com/p/6a6b4e285e75de18339ca3b9e96a5a6a-product.webp",
+    "imagenOpcion2": "https://i.linio.com/p/b18218490c19139938f448feec777337-product.webp"
+  },
+  {
+    "id": 4,
+    "nombre": "Asics GT-2000 8",
+    "descripcion": "Descripcion generica",
+    "sku": "1234567890",
+    "precio": 30,
+    "categoria": "running",
+    "imagen": "https://images.asics.com/is/image/asics/1012A591_002_SR_RT_GLB?$zoom$",
+    "opciones": [
+      "https://images.asics.com/is/image/asics/1012A591_404_SR_RT_GLB-2?$zoom$",
+      "https://images.asics.com/is/image/asics/1012A591_400_SR_RT_GLB-1?$zoom$"
+    ]
+  },
+  {
+    "id": 4,
+    "nombre": "articulo4",
+    "descripcion": "Descripcion generica",
+    "sku": "1234567890",
+    "precio": 30,
+    "categoria": "tenis",
+    "imagen": "https://www.smashinn.com/f/13776/137762387/babolat-raqueta-tenis-boost-drive.jpg",
+    "imagenOpcion1": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/06a39a6641e8498a8897a820004945c4_9366/Camiseta_de_Futbol_de_Local_FC_Bayern_Munich_Replica_Rojo_AZ7961_01_laydown.jpg",
+    "imagenOpcion2": "https://img.planetafobal.com/2021/07/camiseta-titular-adidas-2021-2022-bayern-munich-wq.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "articulo5",
+    "descripcion": "Descripcion generica",
+    "sku": "1234567890",
+    "precio": 30,
+    "categoria": "tennis",
+    "imagen": "https://www.smashinn.com/f/13776/137762387/babolat-raqueta-tenis-boost-drive.jpg",
+    "imagenOpcion1": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/06a39a6641e8498a8897a820004945c4_9366/Camiseta_de_Futbol_de_Local_FC_Bayern_Munich_Replica_Rojo_AZ7961_01_laydown.jpg",
+    "imagenOpcion2": "https://img.planetafobal.com/2021/07/camiseta-titular-adidas-2021-2022-bayern-munich-wq.jpg"
+  },
+  {
+    "id": 6,
+    "nombre": "articulo6",
+    "descripcion": "Descripcion generica",
+    "sku": "1234567890",
+    "precio": 30,
+    "categoria": "tennis",
+    "imagen": "https://www.smashinn.com/f/13776/137762387/babolat-raqueta-tenis-boost-drive.jpg",
+    "imagenOpcion1": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/06a39a6641e8498a8897a820004945c4_9366/Camiseta_de_Futbol_de_Local_FC_Bayern_Munich_Replica_Rojo_AZ7961_01_laydown.jpg",
+    "imagenOpcion2": "https://img.planetafobal.com/2021/07/camiseta-titular-adidas-2021-2022-bayern-munich-wq.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "articulo7",
+    "descripcion": "Descripcion generica",
+    "sku": "1234567890",
+    "precio": 30,
+    "categoria": "tennis",
+    "imagen": "https://www.smashinn.com/f/13776/137762387/babolat-raqueta-tenis-boost-drive.jpg",
+    "imagenOpcion1": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/06a39a6641e8498a8897a820004945c4_9366/Camiseta_de_Futbol_de_Local_FC_Bayern_Munich_Replica_Rojo_AZ7961_01_laydown.jpg",
+    "imagenOpcion2": "https://img.planetafobal.com/2021/07/camiseta-titular-adidas-2021-2022-bayern-munich-wq.jpg"
+  }
+]

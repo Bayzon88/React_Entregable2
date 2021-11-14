@@ -16,13 +16,19 @@ function App() {
           <Route exact path='/'>
             <ItemListContainer />
           </Route>
-          <Route exact path='/catego/'>
+          <Route exact path='/:categoryId'>
             {" "}
-            <ItemDetailContainer />;
+            <ItemListContainer greeting={"Filtro"} />
           </Route>
-          <Route path='/category/futbol/'>
+          <Route
+            exact
+            path='/:categoryId/:itemId/'
+            component={ItemDetailContainer}
+          >
             <ItemDetailContainer />
           </Route>
+          {/* <ItemDetailContainer />
+          </Route> */}
         </Switch>
       </BrowserRouter>
     </div>
