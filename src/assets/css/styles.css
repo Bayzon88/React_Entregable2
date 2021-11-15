@@ -6,7 +6,8 @@
   color: white;
 }
 .itemDetailContainer .imagenPrincipal {
-  width: 49vw;
+  padding: 7%;
+  width: 50%;
 }
 .itemDetailContainer .idc__descripcion {
   height: 50%;

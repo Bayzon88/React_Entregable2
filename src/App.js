@@ -4,6 +4,8 @@ import CustomNavbar from "./Components/NavBar";
 import ItemListContainer from "./Components/ItemListContainer";
 import ItemDetailContainer from "./Components/ItemDetailContainer";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import { CartHandler, CartContext } from "./Components/CartContext";
+import Cart from "./Components/Cart";
 
 function App() {
   return (
@@ -16,15 +18,16 @@ function App() {
           <Route exact path='/'>
             <ItemListContainer />
           </Route>
+          {/* <CartHandler> */}
+          <Route exact path='/cart'>
+            <Cart />
+          </Route>
+          {/* </CakrtHandler> */}
           <Route exact path='/:categoryId'>
             {" "}
             <ItemListContainer greeting={"Filtro"} />
           </Route>
-          <Route
-            exact
-            path='/:categoryId/:itemId/'
-            component={ItemDetailContainer}
-          >
+          <Route exact path='/:categoryId/:itemId/'>
             <ItemDetailContainer />
           </Route>
           {/* <ItemDetailContainer />

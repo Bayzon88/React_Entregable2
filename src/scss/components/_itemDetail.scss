@@ -1,3 +1,4 @@
+$sectionSize: 50%;
 .itemDetailContainer {
   display: flex;
 
@@ -7,7 +8,8 @@
 
   color: white;
   .imagenPrincipal {
-    width: 49vw;
+    padding: 7%;
+    width: $sectionSize;
   }
   .idc {
     &__descripcion {
@@ -18,7 +20,7 @@
     }
     &__opciones {
       img {
-        width: 50%;
+        width: 100% - $sectionSize;
         height: 80px;
       }
     }

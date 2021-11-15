@@ -9,32 +9,39 @@ import Item from "./Item";
 const ITEMS = require("../Data/data.json");
 
 function ItemDetailContainer() {
-  const [productos, setProductos] = useState(() => []);
+  const [productos, setProductos] = useState({});
+  const [loading, setLoading] = useState(true);
 
   //*React lee params de la barra de direcciones, hay que decalrar cada uno
   const { itemId, categoryId } = useParams();
 
   //CREANDO PROMISE CON TIME OUT
-  console.log(itemId);
+
   useEffect(() => {
     const TAREA = new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(ITEMS);
-      }, 2000);
+      }, 0);
     });
     TAREA.then((result) => {
-      console.log(result.find((idItem) => idItem.categoria == categoryId));
       setProductos(
         result.find(
           (idItem) => idItem.id == itemId && idItem.categoria == categoryId
         )
       );
+      //es necesario agregar un loading para asegurar que se carguen todas las propiedades de data.json
+      setLoading(false);
     });
-  }, [itemId]);
+  }, [categoryId]);
 
   return (
     <Container fluid='xl' className='d-flex flex-row'>
-      <ItemDetail {...productos}></ItemDetail>
+      {loading ? (
+        <h2>Cargando Productos</h2>
+      ) : (
+        <ItemDetail {...productos}></ItemDetail>
+      )}
+
       {/* <ItemDetail item={productos[0]}> </ItemDetail> */}
     </Container>
   );

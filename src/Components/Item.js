@@ -11,9 +11,6 @@ import { NavLink, Link } from "react-router-dom";
 //deconstruccion del prop de react
 function Item({ nombre, descripcion, sku, precio, categoria, imagen, id }) {
   const item = [nombre, descripcion, sku, precio, categoria];
-  const getItemId = (item) => {
-    let idItem = item.target.parentElement.parentElement.parentElement.id;
-  };
 
   return (
     //card de bootstrap incorporando variables
@@ -25,12 +22,7 @@ function Item({ nombre, descripcion, sku, precio, categoria, imagen, id }) {
         <Card.Text>{sku}</Card.Text>
         <Card.Text>{precio}</Card.Text>
 
-        <Button
-          variant='dark'
-          onClick={(item) => {
-            getItemId(item);
-          }}
-        >
+        <Button variant='dark'>
           <NavLink to={`/${categoria}/${id}`} className=' btn btn-dark  '>
             Comprar
           </NavLink>

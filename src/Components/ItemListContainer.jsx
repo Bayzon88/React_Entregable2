@@ -14,7 +14,7 @@ function ItemListContainer({ greeting }) {
     const TAREA = new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(ITEMS);
-      }, 1000);
+      }, 0);
     });
     TAREA.then((result) => {
       // Param debe pasarse a traves del path en App.js(mismo nombre)
