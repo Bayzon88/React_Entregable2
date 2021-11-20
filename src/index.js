@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "../src/assets/css/styles.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min"; //Necesario para hacer uso del JS de Bootstrap
+
 import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(

@@ -1,5 +1,5 @@
-import "./App.css";
 import "./assets/css/styles.css";
+
 import CustomNavbar from "./Components/NavBar";
 import ItemListContainer from "./Components/ItemListContainer";
 import ItemDetailContainer from "./Components/ItemDetailContainer";
@@ -12,27 +12,29 @@ function App() {
     //TODO RETIRAR inline style
     <div className='container-fluid bg-dark'>
       <BrowserRouter>
-        <CustomNavbar />
+        <CartHandler>
+          <CustomNavbar />
 
-        <Switch>
-          <Route exact path='/'>
-            <ItemListContainer />
-          </Route>
-          {/* <CartHandler> */}
-          <Route exact path='/cart'>
-            <Cart />
-          </Route>
-          {/* </CakrtHandler> */}
-          <Route exact path='/:categoryId'>
-            {" "}
-            <ItemListContainer greeting={"Filtro"} />
-          </Route>
-          <Route exact path='/:categoryId/:itemId/'>
-            <ItemDetailContainer />
-          </Route>
-          {/* <ItemDetailContainer />
+          <Switch>
+            <Route exact path='/'>
+              <ItemListContainer />
+            </Route>
+
+            <Route exact path='/cart'>
+              <Cart />
+            </Route>
+
+            <Route exact path='/:categoryId'>
+              {" "}
+              <ItemListContainer greeting={"Filtro"} />
+            </Route>
+            <Route exact path='/:categoryId/:itemId/'>
+              <ItemDetailContainer />
+            </Route>
+            {/* <ItemDetailContainer />
           </Route> */}
-        </Switch>
+          </Switch>
+        </CartHandler>
       </BrowserRouter>
     </div>
   );

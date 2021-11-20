@@ -1,4 +1,3 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 import { useState, useContext } from "react";
 import { useParams } from "react-router-dom";
@@ -21,9 +20,9 @@ function ItemDetail({
   const [comprar, setComprar] = useState(false);
   const { onAdd } = useContext(CartContext); //llamar a la funcion onAdd desde CartContext
 
-  const agregar = (itemToCart) => {
+  const agregar = (unidades) => {
     setComprar(true);
-    onAdd({ id, nombre, precio }, itemToCart.unidades);
+    onAdd({ id, nombre, precio }, unidades);
   };
   return (
     <div className='container  '>

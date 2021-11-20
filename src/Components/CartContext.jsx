@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const CartContext = React.createContext();
 
-function CartHandler({ productos }) {
+function CartHandler({ children }) {
   const [dataCart, setDataCart] = useState([]);
   const [unidades, setUnidades] = useState(0);
   const [total, setTotal] = useState(0);
@@ -15,11 +15,14 @@ function CartHandler({ productos }) {
         {
           id: producto.id,
           nombre: producto.nombre,
+          imagen: producto.imagen,
           precio: producto.precio,
           cantidad: cantidad,
           subtotal: producto.precio * cantidad,
         },
       ]);
+      setTotal(total + producto.precio * cantidad);
+      setUnidades(unidades + 1);
     } else {
       const cartAux = dataCart.map((item) => {
         if (item.id === producto.id) {
@@ -29,6 +32,8 @@ function CartHandler({ productos }) {
         return item;
       });
       setDataCart(cartAux);
+      console.log(producto.precio);
+      console.log("Esta es la cantidad " + cantidad);
       setTotal(total + producto.precio * cantidad);
     }
 
@@ -36,7 +41,7 @@ function CartHandler({ productos }) {
   };
   return (
     <CartContext.Provider value={{ dataCart, unidades, total, onAdd }}>
-      {productos}
+      {children}
     </CartContext.Provider>
   );
 }

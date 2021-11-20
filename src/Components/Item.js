@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+
 import ItemDetail from "./ItemDetail";
 import { render } from "sass";
 import { NavLink, Link } from "react-router-dom";

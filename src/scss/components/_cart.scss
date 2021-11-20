@@ -1,0 +1,17 @@
+.cartView {
+  margin: 0;
+  background-color: white;
+  text-align: center;
+  &_detail {
+    color: black;
+    &--descripcion {
+      height: 120px;
+      color: blue;
+      margin-bottom: 0px !important;
+    }
+  }
+}
+
+p {
+  margin: 0;
+}

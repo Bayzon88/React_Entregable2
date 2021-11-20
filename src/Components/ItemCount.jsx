@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 function ItemCount(stockItem) {
   const [stock, setStock] = useState(stockItem.stock);
