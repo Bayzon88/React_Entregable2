@@ -39,8 +39,16 @@ function CartHandler({ children }) {
 
     console.log("Este es el producto:" + producto);
   };
+
+  let cantidadProductos = 0;
+  dataCart.forEach((productosToCart) => {
+    cantidadProductos += productosToCart.cantidad;
+  });
+
   return (
-    <CartContext.Provider value={{ dataCart, unidades, total, onAdd }}>
+    <CartContext.Provider
+      value={{ dataCart, unidades, total, onAdd, cantidadProductos }}
+    >
       {children}
     </CartContext.Provider>
   );

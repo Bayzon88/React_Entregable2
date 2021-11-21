@@ -22,7 +22,7 @@ function ItemDetail({
 
   const agregar = (unidades) => {
     setComprar(true);
-    onAdd({ id, nombre, precio }, unidades);
+    onAdd({ id, nombre, precio, imagen }, unidades);
   };
   return (
     <div className='container  '>

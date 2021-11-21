@@ -1,16 +1,19 @@
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-
+import { CartContext } from "./CartContext";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import logo from "../assets/img/logo2.svg";
 import CartWidget from "./CartWidget";
 import { BrowserRouter, NavLink, Link } from "react-router-dom";
 import { NavItem } from "react-bootstrap";
+import { useContext } from "react";
 
 let logoSize = "30px";
 
 function CustomNavbar() {
+  const { cantidadProductos } = useContext(CartContext);
+  console.log(cantidadProductos);
   const categories = [
     {
       id: "cat1",
@@ -41,6 +44,9 @@ function CustomNavbar() {
               <Nav.Link as={Link} exact to='/' className='nav-link'>
                 Home
               </Nav.Link>
+              <Nav.Link as={Link} exact to='/cart' className='nav-link'>
+                Cart
+              </Nav.Link>
 
               <NavDropdown title='Categorias' id='collasible-nav-dropdown'>
                 <NavDropdown.Item as={NavLink} to={`${categories[0].address}`}>
@@ -55,7 +61,7 @@ function CustomNavbar() {
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
-          <CartWidget />
+          {cantidadProductos !== 0 ? <CartWidget /> : <></>}
         </Container>
       </Navbar>
     </div>

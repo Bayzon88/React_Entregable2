@@ -1,17 +1,33 @@
 .cartView {
-  margin: 0;
   background-color: white;
   text-align: center;
   &_detail {
     color: black;
     &--descripcion {
+      padding-left: 2%;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
       height: 120px;
-      color: blue;
-      margin-bottom: 0px !important;
+      color: black;
     }
   }
 }
 
 p {
   margin: 0;
+}
+
+.noProductos {
+  width: 40vw;
+  display: block;
+  text-align: center;
+  position: absolute;
+  top: 20%;
+  right: 50%;
+  transform: translate(50%, 50%);
+  h1 {
+    font-size: 4rem;
+  }
 }
