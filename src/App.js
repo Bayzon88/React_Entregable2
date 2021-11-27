@@ -10,33 +10,32 @@ import Cart from "./Components/Cart";
 function App() {
   return (
     //TODO RETIRAR inline style
-    <div className='container-fluid bg-dark'>
-      <BrowserRouter>
-        <CartHandler>
-          <CustomNavbar />
 
-          <Switch>
-            <Route exact path='/'>
-              <ItemListContainer />
-            </Route>
+    <BrowserRouter>
+      <CartHandler>
+        <CustomNavbar />
 
-            <Route exact path='/cart'>
-              <Cart />
-            </Route>
+        <Switch>
+          <Route exact path='/'>
+            <ItemListContainer />
+          </Route>
 
-            <Route exact path='/:categoryId'>
-              {" "}
-              <ItemListContainer greeting={"Filtro"} />
-            </Route>
-            <Route exact path='/:categoryId/:itemId/'>
-              <ItemDetailContainer />
-            </Route>
-            {/* <ItemDetailContainer />
+          <Route exact path='/cart'>
+            <Cart />
+          </Route>
+
+          <Route exact path='/:categoryId'>
+            {" "}
+            <ItemListContainer greeting={"Filtro"} />
+          </Route>
+          <Route exact path='/:categoryId/:itemId/'>
+            <ItemDetailContainer />
+          </Route>
+          {/* <ItemDetailContainer />
           </Route> */}
-          </Switch>
-        </CartHandler>
-      </BrowserRouter>
-    </div>
+        </Switch>
+      </CartHandler>
+    </BrowserRouter>
   );
 }
 

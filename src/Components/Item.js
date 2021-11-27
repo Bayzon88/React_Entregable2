@@ -14,21 +14,29 @@ function Item({ nombre, descripcion, sku, precio, categoria, imagen, id }) {
 
   return (
     //card de bootstrap incorporando variables
-    <Card id={`${id}`} style={{ width: "15rem" }}>
-      <Card.Img variant='top' src={`${imagen}`} />
-      <Card.Body>
-        <Card.Title>{nombre}</Card.Title>
-        <Card.Text>{descripcion}</Card.Text>
-        <Card.Text>{sku}</Card.Text>
-        <Card.Text>{precio}</Card.Text>
 
-        <Button variant='dark'>
-          <NavLink to={`/${categoria}/${id}`} className=' btn btn-dark  '>
+    <Col style={{ justifyContent: "around" }} className='p-2'>
+      <Card
+        className='card'
+        id={`${id}`}
+        style={{ width: "15rem", height: "100%" }}
+      >
+        <Card.Img variant='top' src={`${imagen}`} />
+        <Card.Body>
+          <Card.Title>{nombre}</Card.Title>
+          <Card.Text>{descripcion}</Card.Text>
+          <Card.Text>{sku}</Card.Text>
+          <Card.Text>{precio}</Card.Text>
+
+          <NavLink
+            to={`/${categoria}/${id}`}
+            className=' btn btn-dark card__button '
+          >
             Comprar
           </NavLink>
-        </Button>
-      </Card.Body>
-    </Card>
+        </Card.Body>
+      </Card>
+    </Col>
   );
 }
 

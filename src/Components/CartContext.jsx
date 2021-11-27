@@ -3,6 +3,7 @@ import React, { useState } from "react";
 const CartContext = React.createContext();
 
 function CartHandler({ children }) {
+  console.log(children);
   const [dataCart, setDataCart] = useState([]);
   const [unidades, setUnidades] = useState(0);
   const [total, setTotal] = useState(0);
@@ -17,6 +18,7 @@ function CartHandler({ children }) {
           nombre: producto.nombre,
           imagen: producto.imagen,
           precio: producto.precio,
+          sku: producto.sku,
           cantidad: cantidad,
           subtotal: producto.precio * cantidad,
         },
@@ -32,12 +34,12 @@ function CartHandler({ children }) {
         return item;
       });
       setDataCart(cartAux);
-      console.log(producto.precio);
-      console.log("Esta es la cantidad " + cantidad);
+      // console.log(producto.precio);
+      // console.log("Esta es la cantidad " + cantidad);
       setTotal(total + producto.precio * cantidad);
     }
 
-    console.log("Este es el producto:" + producto);
+    // console.log("Este es el producto:" + producto);
   };
 
   let cantidadProductos = 0;
@@ -45,9 +47,27 @@ function CartHandler({ children }) {
     cantidadProductos += productosToCart.cantidad;
   });
 
+  const deleteItems = (id, unidades, precio) => {
+    const itemsNoEliminados = dataCart.filter((res) => {
+      return res.id !== id;
+    });
+    setDataCart(itemsNoEliminados);
+    let nuevoTotalCart = 0;
+    itemsNoEliminados.forEach((productosInCart) => {
+      nuevoTotalCart += productosInCart.cantidad * productosInCart.precio;
+    });
+    setTotal(nuevoTotalCart);
+  };
   return (
     <CartContext.Provider
-      value={{ dataCart, unidades, total, onAdd, cantidadProductos }}
+      value={{
+        dataCart,
+        unidades,
+        total,
+        onAdd,
+        cantidadProductos,
+        deleteItems,
+      }}
     >
       {children}
     </CartContext.Provider>

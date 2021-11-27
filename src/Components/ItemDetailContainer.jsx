@@ -6,14 +6,9 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import ItemDetail from "./ItemDetail";
 import Item from "./Item";
-import { getFirestoreDB } from "../lib/firestoreConfig";
-import {
-  getFirestore,
-  getDocs,
-  query,
-  where,
-  collection,
-} from "firebase/firestore";
+import db from "../Firebase/firebase";
+import { collection, query, where, getDocs } from "firebase/firestore";
+
 const ITEMS = require("../Data/data.json");
 
 function ItemDetailContainer() {
@@ -22,41 +17,25 @@ function ItemDetailContainer() {
 
   //*React lee params de la barra de direcciones, hay que decalrar cada uno
   const { itemId, categoryId } = useParams();
-  const db = getFirestoreDB();
+
   //CREANDO PROMISE CON TIME OUT
 
   useEffect(() => {
-    const TAREA = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(ITEMS);
-      }, 0);
-    });
-    TAREA.then((result) => {
-      setProductos(
-        result.find(
-          (idItem) => idItem.id == itemId && idItem.categoria == categoryId
-        )
-      );
-      //es necesario agregar un loading para asegurar que se carguen todas las propiedades de data.json
-      setLoading(false);
-    });
+    //tambien podria utilizar doc en lugar de query y poner doc(db,"productos", itemId)
+    const myItems = categoryId
+      ? query(collection(db, "productos"), where("categoria", "==", categoryId))
+      : collection(db, "productos");
 
-    // const getProductByID = async () => {
-    //   const queryCollection = query(
-    //     collection(db, "futbol"),
-    //     where("id", "==", `${itemId}`)
-    //   );
-    //   console.log(db.collection("futbol").getDocs());
-    //   const querySnapShot = await getDocs(queryCollection);
-    //   console.log(querySnapShot);
-    //   let aux = {};
-    //   querySnapShot.forEach((doc) => {
-    //     aux = { ...doc.data() };
-    //   });
-    //   console.log(aux);
-    //   setProductos(aux);
-    // };
-    // getProductByID();
+    getDocs(myItems)
+      .then((res) => {
+        console.log(res);
+        const result = res.docs.map((doc) => {
+          return { ...doc.data(), id: doc.id };
+        });
+
+        setProductos(result.find((item) => item.id === itemId));
+      })
+      .finally(() => setLoading(false));
   }, [categoryId]);
 
   return (
@@ -73,3 +52,18 @@ function ItemDetailContainer() {
 }
 
 export default ItemDetailContainer;
+
+// const TAREA = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve(ITEMS);
+//   }, 2000);
+// });
+// TAREA.then((result) => {
+//   setProductos(
+//     result.find(
+//       (idItem) => idItem.id == itemId && idItem.categoria == categoryId
+//     )
+//   );
+//   //es necesario agregar un loading para asegurar que se carguen todas las propiedades de data.json
+//   setLoading(false);
+// });

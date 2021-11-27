@@ -22,7 +22,7 @@ function ItemDetail({
 
   const agregar = (unidades) => {
     setComprar(true);
-    onAdd({ id, nombre, precio, imagen }, unidades);
+    onAdd({ id, nombre, precio, imagen, sku }, unidades);
   };
   return (
     <div className='container  '>
@@ -51,7 +51,7 @@ function ItemDetail({
                 <ItemCount stock={stock} onAdd={agregar} />
               ) : (
                 <Link to='/cart'>
-                  <button>TErminar compra</button>
+                  <button>Terminar compra</button>
                 </Link>
               )}
             </div>

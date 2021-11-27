@@ -1,0 +1,11 @@
+.card {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  img {
+    width: 5rem;
+    height: 5rem;
+  }
+  &__button {
+  }
+}

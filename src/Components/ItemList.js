@@ -1,4 +1,5 @@
 import Item from "./Item";
+import React from "react";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import { Container } from "react-bootstrap";
@@ -14,7 +15,8 @@ function ItemList({ productos }) {
   };
 
   return (
-    <Container className='d-flex'>
+    <React.Fragment>
+      {/* // <Container className='d-flex '> */}
       {productos.length === 0 ? (
         <div
           style={{
@@ -29,7 +31,8 @@ function ItemList({ productos }) {
       ) : (
         setCardInfo()
       )}
-    </Container>
+      {/* // </Container> */}
+    </React.Fragment>
   );
 }
 

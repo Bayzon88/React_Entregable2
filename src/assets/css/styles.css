@@ -38,6 +38,15 @@ p {
   font-size: 4rem;
 }
 
+.card {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+.card img {
+  width: 5rem;
+  height: 5rem;
+}
 .itemDetailContainer {
   display: flex;
   background-color: rgba(231, 243, 236, 0.815);
