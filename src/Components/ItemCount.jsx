@@ -21,17 +21,28 @@ function ItemCount(stockItem) {
   return (
     <div className='d-flex'>
       <div className='d-flex '>
-        <button type='button' onClick={() => removeItems()}>
+        <button
+          className='btn btn-primary'
+          type='button'
+          onClick={() => removeItems()}
+        >
           -
         </button>
         <p>{unidades}</p>
-        <button type='button' onClick={() => addItems()}>
+        <button
+          className='btn btn-primary'
+          type='button'
+          onClick={() => addItems()}
+        >
           +
         </button>
       </div>
       <div className='d-flex'>
         <p style={{ color: "black" }}>Stock Disponible:{`${stock}`}</p>
-        <button onClick={() => stockItem.onAdd(unidades)}>
+        <button
+          className='btn btn-primary'
+          onClick={() => stockItem.onAdd(unidades)}
+        >
           Agregar a Carrito
         </button>
       </div>

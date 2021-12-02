@@ -32,7 +32,7 @@ function CustomNavbar() {
     },
   ];
   return (
-    <div>
+    <div style={{ zIndex: "3" }}>
       <Navbar collapseOnSelect expand='md' bg='dark' variant='dark'>
         <Container>
           <Navbar.Brand as={Link} to='/'>

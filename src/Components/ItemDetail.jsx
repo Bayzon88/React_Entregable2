@@ -25,40 +25,45 @@ function ItemDetail({
     onAdd({ id, nombre, precio, imagen, sku }, unidades);
   };
   return (
-    <div className='container  '>
-      <div className='itemDetailContainer'>
-        <img className='imagenPrincipal' src={`${imagen}`} />
-        <div className='idc'>
-          <div className='idc__descripcion'>
+    <>
+      <div className='container'>
+        <div className=' d-flex'>
+          <img className='imagenPrincipal' src={`${imagen}`} />
+          <div>
             <h6>{sku}</h6>
-            <h3>Categoria: {categoria}</h3>
 
             <h1>{nombre}</h1>
             <p>{descripcion}</p>
+            <h3>Categoria: {categoria}</h3>
           </div>
-          <div className='idc__opciones'>
-            <p>Otras opciones: </p>
-            <img src={`${imagenOpcion1}`} alt='' />
-            <img src={`${imagenOpcion2}`} alt='' />
+        </div>
+      </div>
+      <div className='container  '>
+        <div className='itemDetailContainer'>
+          <div className='idc'>
+            <div className='idc__opciones'>
+              <p>Otras opciones: </p>
+              <img src={`${imagenOpcion1}`} alt='' />
+              <img src={`${imagenOpcion2}`} alt='' />
 
-            <div className='d-flex p-3'>
-              <p>S/. {precio}</p>
-              <Button className=''>Comprar</Button>
-            </div>
-            <div>
-              {/* pasamos a traves de onAdd la funcion "addItemsToCart" */}
-              {!comprar ? (
-                <ItemCount stock={stock} onAdd={agregar} />
-              ) : (
-                <Link to='/cart'>
-                  <button>Terminar compra</button>
-                </Link>
-              )}
+              <div className='d-flex p-3'>
+                <p>S/. {precio}</p>
+              </div>
+              <div>
+                {/* pasamos a traves de onAdd la funcion "addItemsToCart" */}
+                {!comprar ? (
+                  <ItemCount stock={stock} onAdd={agregar} />
+                ) : (
+                  <Link to='/cart'>
+                    <button>Terminar compra</button>
+                  </Link>
+                )}
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
