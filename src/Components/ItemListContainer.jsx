@@ -7,7 +7,6 @@ import { useParams } from "react-router";
 
 import db from "../Firebase/firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
-const ITEMS = require("../Data/data.json");
 
 function ItemListContainer({ greeting }) {
   const [productos, setProductos] = useState(() => []);
@@ -19,7 +18,7 @@ function ItemListContainer({ greeting }) {
     //* como segundo parametro recibe el nombre de la coleccion(web firebase)
     const myItems = categoryId
       ? query(collection(db, "productos"), where("categoria", "==", categoryId))
-      : collection(db, "productos");
+      : query(collection(db, "productos"), where("featured", "==", true));
     console.log(categoryId);
     //* se crea una promesa para traer los documentos
     getDocs(myItems)
@@ -45,9 +44,12 @@ function ItemListContainer({ greeting }) {
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        <Row>
-          <ItemList productos={productos}></ItemList>
-        </Row>
+        <div>
+          <h3 className='loUltimo'>Lo Ultimo en deporte</h3>
+          <Row>
+            <ItemList productos={productos}></ItemList>
+          </Row>
+        </div>
       )}
     </Container>
   );

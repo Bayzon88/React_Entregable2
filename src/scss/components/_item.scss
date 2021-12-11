@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=Lato&family=PT+Sans+Narrow:wght@700&family=Roboto+Slab&display=swap");
+
+.cardInfo {
+  color: black;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  align-items: center !important;
+
+  &__name {
+    font-size: 1.6rem !important;
+    font-family: "DM Sans", sans-serif;
+  }
+
+  //   font-family: "PT Sans Narrow", sans-serif;
+}
+
+// font-family: "Roboto Slab", serif;

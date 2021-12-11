@@ -5,7 +5,7 @@ import Item from "react-bootstrap/CarouselItem";
 export default function Carrusel() {
   const slideInterval = 3000;
   return (
-    <Container style={{ zIndex: 1 }}>
+    <Container bsPrefix='container-fluid' fluid style={{ zIndex: 1 }}>
       <Carousel
         fade={true}
         touch={false}

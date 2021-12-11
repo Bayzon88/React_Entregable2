@@ -22,15 +22,19 @@ function Item({ nombre, descripcion, sku, precio, categoria, imagen, id }) {
       className='p-2 d-flex align-items-center justify-content-center'
     >
       <Card
-        className='card'
+        body={true}
+        border={"primary"}
         id={`${id}`}
-        style={{ width: "15rem", height: "18rem" }}
+        style={{ width: "15rem", height: "100%" }}
+        className='cardInfo '
       >
+        <Card.Title bsPrefix='card-title' className='cardInfo__name'>
+          {nombre}
+        </Card.Title>
+
         <Card.Img variant='top' src={`${imagen}`} />
         <Card.Body>
-          <Card.Title>{nombre}</Card.Title>
           <Card.Text>{descripcion}</Card.Text>
-          <Card.Text>{sku}</Card.Text>
           <Card.Text>S/. {precio}</Card.Text>
 
           <NavLink
@@ -39,6 +43,7 @@ function Item({ nombre, descripcion, sku, precio, categoria, imagen, id }) {
           >
             Comprar
           </NavLink>
+          <Card.Text>{sku}</Card.Text>
         </Card.Body>
       </Card>
     </Col>

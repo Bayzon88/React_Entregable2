@@ -19,28 +19,27 @@ function ItemCount(stockItem) {
   };
 
   return (
-    <div className='d-flex'>
+    <div className='d-block'>
+      <div className='d-flex itemCount '>
+        <p>Stock Disponible:{`${stock}`}</p>
+        <div className='d-flex itemCount__add  '>
+          <button
+            className='btn btn-dark itemCount__add--minus'
+            type='button'
+            onClick={() => removeItems()}
+          />
+
+          <p>{unidades}</p>
+          <button
+            className='btn btn-dark itemCount__add--plus'
+            type='button'
+            onClick={() => addItems()}
+          />
+        </div>
+      </div>
       <div className='d-flex '>
         <button
-          className='btn btn-primary'
-          type='button'
-          onClick={() => removeItems()}
-        >
-          -
-        </button>
-        <p>{unidades}</p>
-        <button
-          className='btn btn-primary'
-          type='button'
-          onClick={() => addItems()}
-        >
-          +
-        </button>
-      </div>
-      <div className='d-flex'>
-        <p style={{ color: "black" }}>Stock Disponible:{`${stock}`}</p>
-        <button
-          className='btn btn-primary'
+          className='btn btn-dark'
           onClick={() => stockItem.onAdd(unidades)}
         >
           Agregar a Carrito

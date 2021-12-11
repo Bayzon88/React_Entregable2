@@ -16,7 +16,7 @@ const CartItem = ({ dataCart }) => {
               <p>{item.nombre}</p>
               <p> {item.precio}</p>
               <p> {item.cantidad}</p>
-              <p>{`${item.sku}`}</p>
+
               <p>Total = {item.precio * item.cantidad}</p>
               <button
                 onClick={() => {

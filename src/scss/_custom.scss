@@ -1,2 +1,8 @@
 $paragraph-margin-bottom: 0;
+$primary: rgb(99, 218, 99);
+
+//Customizing cards
+$padding-card: 0.5rem;
+$card-spacer-y: $padding-card;
+$card-spacer-x: $padding-card;
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";

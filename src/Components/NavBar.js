@@ -6,7 +6,6 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import logo from "../assets/img/logo2.svg";
 import CartWidget from "./CartWidget";
 import { BrowserRouter, NavLink, Link } from "react-router-dom";
-import { NavItem } from "react-bootstrap";
 import { useContext } from "react";
 
 let logoSize = "30px";
@@ -32,7 +31,7 @@ function CustomNavbar() {
     },
   ];
   return (
-    <div style={{ zIndex: "3" }}>
+    <div>
       <Navbar collapseOnSelect expand='md' bg='dark' variant='dark'>
         <Container>
           <Navbar.Brand as={Link} to='/'>

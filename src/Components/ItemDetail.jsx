@@ -26,39 +26,39 @@ function ItemDetail({
   };
   return (
     <>
-      <div className='container'>
-        <div className=' d-flex'>
-          <img className='imagenPrincipal' src={`${imagen}`} />
-          <div>
-            <h6>{sku}</h6>
-
-            <h1>{nombre}</h1>
-            <p>{descripcion}</p>
-            <h3>Categoria: {categoria}</h3>
+      <div className='container d-flex justify-content-center'>
+        <div className='  itemDetail'>
+          <div className='detailContainer '>
+            <div className='imagenPrincipal'>
+              <img src={`${imagen}`} />
+            </div>
           </div>
-        </div>
-      </div>
-      <div className='container  '>
-        <div className='itemDetailContainer'>
-          <div className='idc'>
-            <div className='idc__opciones'>
-              <p>Otras opciones: </p>
-              <img src={`${imagenOpcion1}`} alt='' />
-              <img src={`${imagenOpcion2}`} alt='' />
 
-              <div className='d-flex p-3'>
-                <p>S/. {precio}</p>
-              </div>
-              <div>
-                {/* pasamos a traves de onAdd la funcion "addItemsToCart" */}
-                {!comprar ? (
-                  <ItemCount stock={stock} onAdd={agregar} />
-                ) : (
-                  <Link to='/cart'>
-                    <button>Terminar compra</button>
-                  </Link>
-                )}
-              </div>
+          <div className='mt-3 buyingOptions d-flex justify-content-between'>
+            <div className='detailContainer__data d-flex flex-column justify-content-between'>
+              <h1>{nombre}</h1>
+              <h2>{descripcion}</h2>
+              <p>S/. {precio}</p>
+              <h3 className='mt-2'>Categoria: {categoria}</h3>
+
+              <h6 className='' id='sku'>
+                {sku}
+              </h6>
+            </div>
+            <div className='d-flex  itemCountContainer justify-content-start'>
+              {/* pasamos a traves de onAdd la funcion "addItemsToCart" */}
+              {!comprar ? (
+                <ItemCount stock={stock} onAdd={agregar} />
+              ) : (
+                <Link to='/cart'>
+                  <button>Terminar compra</button>
+                </Link>
+              )}
+            </div>
+            <div className='buyingOptions__options'>
+              <p>Otras opciones: </p>
+              <img src={`${imagenOpcion1}`} alt='Opcion1' />
+              <img src={`${imagenOpcion2}`} alt='Opcion2' />
             </div>
           </div>
         </div>

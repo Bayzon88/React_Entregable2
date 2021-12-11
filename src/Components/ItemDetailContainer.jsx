@@ -1,15 +1,9 @@
-import ItemList from "./ItemList";
 import { Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
 import ItemDetail from "./ItemDetail";
-import Item from "./Item";
 import db from "../Firebase/firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
-
-const ITEMS = require("../Data/data.json");
 
 function ItemDetailContainer() {
   const [productos, setProductos] = useState({});
@@ -45,25 +39,8 @@ function ItemDetailContainer() {
       ) : (
         <ItemDetail {...productos}></ItemDetail>
       )}
-
-      {/* <ItemDetail item={productos[0]}> </ItemDetail> */}
     </Container>
   );
 }
 
 export default ItemDetailContainer;
-
-// const TAREA = new Promise((resolve, reject) => {
-//   setTimeout(() => {
-//     resolve(ITEMS);
-//   }, 2000);
-// });
-// TAREA.then((result) => {
-//   setProductos(
-//     result.find(
-//       (idItem) => idItem.id == itemId && idItem.categoria == categoryId
-//     )
-//   );
-//   //es necesario agregar un loading para asegurar que se carguen todas las propiedades de data.json
-//   setLoading(false);
-// });
