@@ -1,16 +1,29 @@
 .cartView {
-  background-color: white;
-  text-align: center;
   &_detail {
+    display: flex;
+    justify-content: center;
     color: black;
+    width: 100%;
+
+    //Items cantidad y precio
     &--descripcion {
       padding-left: 2%;
-      width: 100%;
+      width: 60%;
       display: flex;
       flex-direction: row;
-      justify-content: space-around;
+
+      justify-content: space-between;
       height: 120px;
       color: black;
+    }
+
+    //Total a pagar y boton de compra
+    &--total {
+      display: flex;
+      justify-content: center;
+      h1 {
+        width: 60%;
+      }
     }
   }
 }

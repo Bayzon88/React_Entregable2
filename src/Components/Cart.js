@@ -3,6 +3,7 @@ import { CartContext } from "./CartContext";
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
+import CustomModal from "./Cart/Modal";
 const Cart = () => {
   const { dataCart, total, cantidadProductos } = useContext(CartContext);
   console.log(cantidadProductos);
@@ -16,9 +17,14 @@ const Cart = () => {
       </Link>
     </div>
   ) : (
-    <div>
+    <div className='container '>
       <CartItem dataCart={dataCart} />
-      <h1>Total de carrito: {`S/. ${total}`}</h1>
+      <div className='cartView_detail--total'>
+        <h1 className='d-flex flex-column align-items-end'>
+          Total de carrito: {`S/. ${total}`}
+          <CustomModal />
+        </h1>
+      </div>
     </div>
   );
 };

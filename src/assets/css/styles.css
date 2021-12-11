@@ -5,21 +5,27 @@
   font-size: 2rem;
 }
 
-.cartView {
-  background-color: white;
-  text-align: center;
-}
 .cartView_detail {
+  display: flex;
+  justify-content: center;
   color: black;
+  width: 100%;
 }
 .cartView_detail--descripcion {
   padding-left: 2%;
-  width: 100%;
+  width: 60%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   height: 120px;
   color: black;
+}
+.cartView_detail--total {
+  display: flex;
+  justify-content: center;
+}
+.cartView_detail--total h1 {
+  width: 60%;
 }
 
 p {

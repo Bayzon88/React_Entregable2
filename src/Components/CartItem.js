@@ -8,7 +8,7 @@ const CartItem = ({ dataCart }) => {
     <div className='d-block'>
       {dataCart.map((item) => {
         return (
-          <div className='cartView_detail d-flex align-items-center'>
+          <div className='cartView_detail align-items-center'>
             <div></div>
             <div className=' align-items-center cartView_detail--descripcion'>
               <img width='50px' height='50px' src={item.imagen}></img>
